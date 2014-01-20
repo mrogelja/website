@@ -1,0 +1,31 @@
+/* Background color for the top bar */
+/* Height and margin */
+/* Control Input height for top bar */
+/* Controlling the styles for the title in the top bar */
+/* Style the top bar dropdown elements */
+/* Set the link colors and styles for top-level nav */
+/* Top menu icon styles */
+/* Divider Styles */
+body {
+  position: relative;
+  background: white;
+}
+
+header.sky {
+  position: relative;
+  background: #9DEAFC;
+  height: 500px;
+}
+header.sky svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+header.sky svg #pousse {
+  x: 300px;
+}
+
+nav.ground {
+  height: 90px;
+  background: #A67C52;
+}

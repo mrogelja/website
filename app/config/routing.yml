@@ -1,0 +1,5 @@
+mr_site:
+    resource: "@MrSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

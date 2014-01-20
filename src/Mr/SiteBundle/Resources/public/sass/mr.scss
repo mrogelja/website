@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import "vars";
+
+body{
+  position: relative;
+  background: white;
+}
+
+header.sky{
+  position: relative;
+  background: #9DEAFC;
+  height: 500px;
+
+  svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    #pousse{
+      x: 300px;
+    }
+  }
+}
+
+nav.ground{
+  height: 90px;
+  background: #A67C52;
+}
