@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mr - Mathieu Rogelja</title>
 
     {% stylesheets
-        'bundles/mrsite/css/normalize.css'
-        'bundles/mrsite/css/foundation.css'
-        'bundles/mrsite/css/mr.css'
-        filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
+    'bundles/mrsite/css/normalize.css'
+    'bundles/mrsite/css/foundation.css'
+    'bundles/mrsite/css/mr.css'
+    filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
 
     <script src="{{ asset('bundles/mrsite/js/modernizr.js') }}"></script>
@@ -18,23 +18,49 @@
 <body>
 
 <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <li class="name">
-            <h1><a href="#">Mr</a></h1>
-        </li>
-    </ul>
+    <div class="row">
+        <div class=" medium-4 columns">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">Mr</a></h1>
+                </li>
+            </ul>
+        </div>
+
+        <div class="medium-4 columns">
+            <div class="top-bar-section row">
+                <div class="medium-4 columns">
+                    <a href="#">Profil</a>
+                </div>
+                <div class="medium-4 columns">
+                    <a href="#">Blog</a>
+                </div>
+                <div class="medium-4 columns">
+                    <a href="#">Labo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="medium-4 columns">
+
+        </div>
+    </div>
 </nav>
 
 <header class="sky">
-    {% include  '@MrSiteBundle/img/svg/pousse.s1.svg' %}
+    {% include  'MrSiteBundle:Svg:pousse.s1.svg.twig' %}
 </header>
 
-
-</svg>
 
 <nav class="ground">
 
 </nav>
+
+<section id="main">
+    {% block main %}
+        weather
+    {% endblock %}
+</section>
 
 <script src="{{ asset('bundles/mrsite/js/jquery.js') }}"></script>
 <script src="{{ asset('bundles/mrsite/js/foundation.min.js') }}"></script>
@@ -43,12 +69,10 @@
 <script>
     $(document).foundation();
 
-    var s = Snap("#sky");
+    console.log(Snap.select("#Pousse path"));
 
-    Snap.load("{{ asset('bundles/mrsite/img/svg/pousse.s1.svg') }}", function (f) {
-        g = f.select("g");
-        s.append(g);
-    });
+//    .attr({stroke : "#000", fill: "#000"});
+
 </script>
 </body>
 </html>

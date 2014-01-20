@@ -5062,12 +5062,12 @@ meta.foundation-mq-topbar {
 }
 .top-bar .name h1 {
   line-height: 90px;
-  font-size: 1.0625rem;
+  font-size: 2.1875rem;
   margin: 0;
 }
 .top-bar .name h1 a {
   font-weight: bold;
-  color: #111111;
+  color: #666666;
   width: 50%;
   display: block;
   padding: 0 30px;
@@ -5078,9 +5078,9 @@ meta.foundation-mq-topbar {
   top: 0;
 }
 .top-bar .toggle-topbar a {
-  color: #111111;
+  color: #666666;
   text-transform: uppercase;
-  font-size: 0.8125rem;
+  font-size: 1.25rem;
   font-weight: bold;
   position: relative;
   display: block;
@@ -5144,7 +5144,7 @@ meta.foundation-mq-topbar {
 }
 .top-bar-section .divider,
 .top-bar-section [role="separator"] {
-  border-top: solid 1px #090909;
+  border-top: solid 1px #222222;
   clear: both;
   height: 1px;
   width: 100%;
@@ -5152,17 +5152,17 @@ meta.foundation-mq-topbar {
 .top-bar-section ul li > a {
   display: block;
   width: 100%;
-  color: #111111;
+  color: #666666;
   padding: 12px 0 12px 0;
   padding-left: 30px;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 0.8125rem;
+  font-size: 1.25rem;
   font-weight: normal;
   background: #222222;
 }
 .top-bar-section ul li > a.button {
   background: #008cba;
-  font-size: 0.8125rem;
+  font-size: 1.25rem;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -5188,15 +5188,15 @@ meta.foundation-mq-topbar {
   background: #d32a0e;
 }
 .top-bar-section ul li:hover > a {
-  background: #272727;
+  background: white;
   color: #111111;
 }
 .top-bar-section ul li.active > a {
-  background: #008cba;
+  background: white;
   color: #111111;
 }
 .top-bar-section ul li.active > a:hover {
-  background: #0078a0;
+  background: white;
 }
 .top-bar-section .has-form {
   padding: 30px;
@@ -5246,7 +5246,7 @@ meta.foundation-mq-topbar {
   margin-bottom: 0;
 }
 .top-bar-section .dropdown li.title h5 a {
-  color: #111111;
+  color: #666666;
   line-height: 45px;
   display: block;
 }
@@ -5319,7 +5319,7 @@ meta.foundation-mq-topbar {
     display: none;
   }
   .top-bar-section li.hover > a:not(.button) {
-    background: #272727;
+    background: white;
     color: #111111;
   }
   .top-bar-section li a:not(.button) {
@@ -5328,7 +5328,7 @@ meta.foundation-mq-topbar {
     background: white;
   }
   .top-bar-section li a:not(.button):hover {
-    background: #272727;
+    background: white;
   }
   .top-bar-section .has-dropdown > a {
     padding-right: 50px !important;
@@ -5384,7 +5384,7 @@ meta.foundation-mq-topbar {
   .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
     border-bottom: none;
     border-top: none;
-    border-right: solid 1px #303030;
+    border-right: solid 1px #5c5c5c;
     clear: none;
     height: 90px;
     width: 0;
@@ -5403,11 +5403,11 @@ meta.foundation-mq-topbar {
   }
 
   .no-js .top-bar-section ul li:hover > a {
-    background: #272727;
+    background: white;
     color: #111111;
   }
   .no-js .top-bar-section ul li:active > a {
-    background: #008cba;
+    background: white;
     color: #111111;
   }
   .no-js .top-bar-section .has-dropdown:hover > .dropdown {
