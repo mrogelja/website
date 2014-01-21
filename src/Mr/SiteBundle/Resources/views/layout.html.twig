@@ -47,7 +47,7 @@
     </div>
 </nav>
 
-<header class="sky">
+<header id="sky">
     {% include  'MrSiteBundle:Svg:pousse.s1.svg.twig' %}
 </header>
 
@@ -69,10 +69,12 @@
 <script>
     $(document).foundation();
 
-    console.log(Snap.select("#Pousse path"));
+    var d = new Date();
 
-//    .attr({stroke : "#000", fill: "#000"});
-
+    // This is night !
+    if (d.getHours() > 15 || d.getHours() < 8) {
+        $('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
+    }
 </script>
 </body>
 </html>

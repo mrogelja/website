@@ -22,12 +22,12 @@ body {
   font-size: 1.25rem;
 }
 
-header.sky {
+#sky {
   position: relative;
   background: #9DEAFC;
   height: 500px;
 }
-header.sky svg#Pousse {
+#sky svg#Pousse {
   position: absolute;
   bottom: 0;
   left: 10%;
