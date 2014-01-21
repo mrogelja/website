@@ -49,6 +49,14 @@
 
 <header id="sky">
     {% include  'MrSiteBundle:Svg:pousse.s1.svg.twig' %}
+    {% include  'MrSiteBundle:Svg:moon.svg.twig' %}
+    {% for i in range(0, random(30)) %}
+        {% include  'MrSiteBundle:Svg:star.svg.twig' with {
+        x: random(100),
+        y : random(70),
+        scale: random(60) / 100 ,
+        rotate: random(90)} %}
+    {% endfor %}
 </header>
 
 
@@ -73,7 +81,8 @@
 
     // This is night !
     if (d.getHours() > 15 || d.getHours() < 8) {
-        $('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
+        //  $('head').append('<link rel="stylesheet" href="
+        {{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
     }
 </script>
 </body>

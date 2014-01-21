@@ -27,10 +27,24 @@ body {
   background: #9DEAFC;
   height: 500px;
 }
-#sky svg#Pousse {
-  position: absolute;
-  bottom: 0;
+
+#sky svg {
+    position: absolute;
+}
+
+#sky #Pousse {
+    bottom: 0;
   left: 10%;
+}
+
+#sky #Moon {
+    top: 50px;
+    left: 50%;
+    margin-left: -85px;
+}
+
+#sky #Moon, #sky .star {
+    display: none;
 }
 
 nav.ground {

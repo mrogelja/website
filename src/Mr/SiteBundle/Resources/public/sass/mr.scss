@@ -28,10 +28,23 @@ body{
   background: #9DEAFC;
   height: 500px;
 
-  svg#Pousse{
+  svg {
     position: absolute;
+  }
+
+  #Pousse {
     bottom: 0;
     left: 10%;
+  }
+
+  #Moon {
+    top: 50px;
+    left: 50%;
+    margin-left: -85px;
+  }
+
+  #Moon, .star {
+    display: none;
   }
 }
 

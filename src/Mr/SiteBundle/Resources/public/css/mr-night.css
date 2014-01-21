@@ -1,0 +1,27 @@
+.top-bar {
+    background: #222;
+}
+
+.top-bar .name h1 a {
+    color: #fff;
+}
+
+.top-bar .top-bar-section.row .columns a {
+    color: #fff;
+}
+
+#sky {
+    background: #2c4859;
+}
+
+#sky #Pousse * {
+    fill: #181818 !important;
+}
+
+#sky #Moon, #sky .star {
+    display: block;
+}
+
+nav.ground {
+    background: #584026;
+}
