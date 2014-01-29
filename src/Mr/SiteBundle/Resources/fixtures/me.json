@@ -1,0 +1,71 @@
+{
+    "firstName": "Mathieu",
+    "lastName": "Rogelja",
+    "gender": "Male",
+    "dob": "1986-02-24",
+    "email": "mathieu.rogelja@gmail.com",
+    "address": {
+        "streetAddress": "220 rue du faubourg Saint-Antoine",
+        "city": "Paris",
+        "zipOrPostal": "75012"
+    },
+    "phoneNumber": [
+        {
+            "type": "home",
+            "number": "-"
+        },
+        {
+            "type": "mobile",
+            "number": "06.70.41.24.62"
+        }
+    ],
+    "summary": "6 années de développement Web avec maîtrise de Php/Symfony2 mais pas seulement...",
+    "education": [
+        {
+            "name": "Dîplome d'ingénieur en Télécoms & Réseaux",
+            "place": "ENSEEIHT Toulouse",
+            "date": "01-09-2008"
+        }
+    ],
+    "skills": [
+        "High-End Application Software: IBM Websphere Portal, Liferay Portal, Alfresco CMS system",
+        "Languages Web: Php, Javascript, MySQL, MongoDB, Action Script, SASS, Compass",
+        "Autres languages : Java, C, C++, C#, Python, Ruby",
+        "Frameworks: Symfony2, Doctrine, Propel, ExtJs, JQuery, PrototypeJs, BackboneJS, AngularJs, KnockoutJS... et plein d'autres",
+        "Outils collaboratifs: Git, Subversion",
+        "Tools: IntelliJ Idea, Eclipse"
+    ],
+    "projects": [
+        {
+            "name": "Institut National de l'Audiovisuel",
+            "start": "2008-10-01",
+            "end": "Now",
+            "contract": "CDI",
+            "type": "développement",
+            "role": "Chef de projet Hypermedia",
+            "details": ""
+        },
+        {
+            "name": "Institut National de l'Audiovisuel",
+            "start": "2007-10-01",
+            "end": "2008-10-01",
+            "contract": "CDD",
+            "type": "développement",
+            "role": "Développeur côté Backoffice",
+            "details": ""
+        },
+        {
+            "name": "zSlide",
+            "start": "2007-03-01",
+            "end": "2007-09-01",
+            "contract": "Stage",
+            "type": "développement",
+            "role": "Développeur web Ruby/Python sur la solution Podmailing",
+            "details": "",
+            "environment": ""
+        }
+    ],
+    "hobbies": [
+        "Tout ce qui touche de près ou de loin à l'environnement."
+    ]
+}
