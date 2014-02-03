@@ -80,9 +80,8 @@
     var d = new Date();
 
     // This is night !
-    if (d.getHours() > 15 || d.getHours() < 8) {
-        //  $('head').append('<link rel="stylesheet" href="
-        {{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
+    if (d.getHours() > 20 || d.getHours() < 8) {
+        $('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
     }
 </script>
 </body>

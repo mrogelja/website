@@ -14,8 +14,12 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
+        $me = $this->get('doctrine_mongodb')
+            ->getRepository('MrSiteBundle:Me')
+            ->findAll();
+
         return array(
-            'name' => $name,
+            'me' => $me[0],
         );
     }
 }

@@ -1,24 +1,14 @@
 {
     "firstName": "Mathieu",
     "lastName": "Rogelja",
-    "gender": "Male",
     "dob": "1986-02-24",
     "email": "mathieu.rogelja@gmail.com",
     "address": {
-        "streetAddress": "220 rue du faubourg Saint-Antoine",
+        "street": "220 rue du faubourg Saint-Antoine",
         "city": "Paris",
-        "zipOrPostal": "75012"
+        "zip": "75012"
     },
-    "phoneNumber": [
-        {
-            "type": "home",
-            "number": "-"
-        },
-        {
-            "type": "mobile",
-            "number": "06.70.41.24.62"
-        }
-    ],
+    "phoneNumber": "06.70.41.24.62",
     "summary": "6 années de développement Web avec maîtrise de Php/Symfony2 mais pas seulement...",
     "education": [
         {
@@ -28,12 +18,66 @@
         }
     ],
     "skills": [
-        "High-End Application Software: IBM Websphere Portal, Liferay Portal, Alfresco CMS system",
-        "Languages Web: Php, Javascript, MySQL, MongoDB, Action Script, SASS, Compass",
-        "Autres languages : Java, C, C++, C#, Python, Ruby",
-        "Frameworks: Symfony2, Doctrine, Propel, ExtJs, JQuery, PrototypeJs, BackboneJS, AngularJs, KnockoutJS... et plein d'autres",
-        "Outils collaboratifs: Git, Subversion",
-        "Tools: IntelliJ Idea, Eclipse"
+        {
+            "type": "Web language",
+            "name": "Php",
+            "rating": 5
+        },
+        {
+            "type": "Web language",
+            "name": "Javascript",
+            "rating": 5
+        },
+        {
+            "type": "Web language",
+            "name": "Action Script",
+            "rating": 4
+        },
+        {
+            "type": "Web language",
+            "name": "Sass",
+            "rating": 5
+        },
+        {
+            "type": "DB language",
+            "name": "MySQL",
+            "rating": 5
+        },
+        {
+            "type": "DB language",
+            "name": "MongoDB",
+            "rating": 4
+        },
+        {
+            "type": "Dev language",
+            "name": "C, C++, C#, Python, Ruby",
+            "rating": 4
+        },
+        {
+            "type": "Framework",
+            "name": "Symfony2",
+            "rating": 5
+        },
+        {
+            "type": "Framework",
+            "name": "Doctrine, Propel",
+            "rating": 5
+        },
+        {
+            "type": "Framework",
+            "name": "ExtJs, JQuery, KnockoutJS",
+            "rating": 5
+        },
+        {
+            "type": "Framework",
+            "name": "PrototypeJs, BackboneJS, AngularJs",
+            "rating": 5
+        },
+        {
+            "type": "Version control",
+            "name": "Git, Subversion",
+            "rating": 5
+        }
     ],
     "projects": [
         {
@@ -41,8 +85,7 @@
             "start": "2008-10-01",
             "end": "Now",
             "contract": "CDI",
-            "type": "développement",
-            "role": "Chef de projet Hypermedia",
+            "jon": "Chef de projet Hypermedia",
             "details": ""
         },
         {
@@ -50,8 +93,7 @@
             "start": "2007-10-01",
             "end": "2008-10-01",
             "contract": "CDD",
-            "type": "développement",
-            "role": "Développeur côté Backoffice",
+            "job": "Développeur",
             "details": ""
         },
         {
@@ -59,13 +101,14 @@
             "start": "2007-03-01",
             "end": "2007-09-01",
             "contract": "Stage",
-            "type": "développement",
-            "role": "Développeur web Ruby/Python sur la solution Podmailing",
-            "details": "",
-            "environment": ""
+            "job": "Développeur web Ruby/Python sur la solution Podmailing",
+            "details": ""
         }
     ],
     "hobbies": [
-        "Tout ce qui touche de près ou de loin à l'environnement."
+        {
+            "name": "Tout ce qui touche de près ou de loin à l'environnement.",
+            "rating": 5
+        }
     ]
 }

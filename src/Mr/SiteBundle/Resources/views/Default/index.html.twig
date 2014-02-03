@@ -1,4 +1,29 @@
 {% extends "MrSiteBundle::layout.html.twig" %}
 
 {% block main %}
+    <div class="row">
+        <h1>A propos de Moi</h1>
+
+        <blockquote>{{ me.summary }}<cite>{{ me.firstName }} {{ me.lastName }}</cite></blockquote>
+
+        <h3>Expériences professionnelles</h3>
+
+        <ul class="square">
+            {% for project in me.projects %}
+                <li>
+                    <h5>
+                        {{ project.name }}
+                        <small>{{ project.start|date("F Y") }} {% if project.end != "Now" %}- {{ project.end|date("F Y") }} {% endif %}</small>
+                    </h5>
+                    <div>{{ project.contract }} - {{ project.job }}</div>
+                    <div></div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Compétences</h3>
+
+        {% for skill in me.skills %}
+        {% endfor %}
+    </div>
 {% endblock %}
