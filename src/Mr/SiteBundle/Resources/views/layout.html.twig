@@ -8,6 +8,7 @@
     {% stylesheets
     'bundles/mrsite/css/normalize.css'
     'bundles/mrsite/css/foundation.css'
+    'bundles/mrsite/css/fontello.css'
     'bundles/mrsite/css/mr.css'
     filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
@@ -81,7 +82,7 @@
 
     // This is night !
     if (d.getHours() > 20 || d.getHours() < 8) {
-        $('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
+        {#$('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');#}
     }
 </script>
 </body>

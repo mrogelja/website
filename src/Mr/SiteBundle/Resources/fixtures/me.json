@@ -1,4 +1,5 @@
 {
+    "_id": "1",
     "firstName": "Mathieu",
     "lastName": "Rogelja",
     "dob": "1986-02-24",
@@ -10,7 +11,7 @@
     },
     "phoneNumber": "06.70.41.24.62",
     "summary": "6 années de développement Web avec maîtrise de Php/Symfony2 mais pas seulement...",
-    "education": [
+    "educations": [
         {
             "name": "Dîplome d'ingénieur en Télécoms & Réseaux",
             "place": "ENSEEIHT Toulouse",
@@ -21,52 +22,68 @@
         {
             "type": "Web language",
             "name": "Php",
-            "rating": 5
+            "rating": 5,
+            "icon": "php"
+        },
+        {
+            "type": "Web language",
+            "name": "HTML 5",
+            "rating": 5,
+            "icon": "html"
         },
         {
             "type": "Web language",
             "name": "Javascript",
-            "rating": 5
+            "rating": 5,
+            "icon": "js"
         },
         {
             "type": "Web language",
             "name": "Action Script",
-            "rating": 4
+            "rating": 4,
+            "icon": "as"
         },
         {
             "type": "Web language",
             "name": "Sass",
-            "rating": 5
+            "rating": 5,
+            "icon": "css"
         },
         {
             "type": "DB language",
             "name": "MySQL",
-            "rating": 5
+            "rating": 5,
+            "icon": "mysql"
         },
         {
             "type": "DB language",
             "name": "MongoDB",
-            "rating": 4
+            "rating": 4,
+            "icon": "mongo"
         },
         {
             "type": "Dev language",
             "name": "C, C++, C#, Python, Ruby",
-            "rating": 4
+            "rating": 4,
+            "icon": "code"
         },
         {
             "type": "Framework",
             "name": "Symfony2",
-            "rating": 5
+            "rating": 5,
+            "icon": "symfony"
         },
         {
             "type": "Framework",
             "name": "Doctrine, Propel",
-            "rating": 5
+            "rating": 5,
+            "icon": "doctrine"
         },
         {
             "type": "Framework",
             "name": "ExtJs, JQuery, KnockoutJS",
-            "rating": 5
+            "rating": 5,
+            "icon": "php"
         },
         {
             "type": "Framework",
@@ -75,8 +92,15 @@
         },
         {
             "type": "Version control",
-            "name": "Git, Subversion",
-            "rating": 5
+            "name": "Subversion",
+            "rating": 5,
+            "icon": "svn"
+        },
+        {
+            "type": "Version control",
+            "name": "Git",
+            "rating": 4,
+            "icon": "git"
         }
     ],
     "projects": [
@@ -107,8 +131,19 @@
     ],
     "hobbies": [
         {
-            "name": "Tout ce qui touche de près ou de loin à l'environnement.",
-            "rating": 5
+            "name": "Nature",
+            "details": "Tout ce qui touche de près ou de loin à l'environnement",
+            "icon": "nature"
+        },
+        {
+            "name": "Voyage",
+            "details": "Bouger, voyager, découvrir,  contempler, rencontrer...",
+            "icon": "travel"
+        },
+        {
+            "name": "Savoie",
+            "details": "Ma prochaine destination",
+            "icon": "savoie"
         }
     ]
 }

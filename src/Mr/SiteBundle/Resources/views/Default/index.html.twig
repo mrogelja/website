@@ -5,25 +5,116 @@
         <h1>A propos de Moi</h1>
 
         <blockquote>{{ me.summary }}<cite>{{ me.firstName }} {{ me.lastName }}</cite></blockquote>
+    </div>
 
-        <h3>Expériences professionnelles</h3>
+    <div class="experiences">
+        <div class="row">
+            <h3>Parcours.
+                <small>Ce que j'ai fait dans ma vie.</small>
+            </h3>
 
-        <ul class="square">
-            {% for project in me.projects %}
-                <li>
-                    <h5>
-                        {{ project.name }}
-                        <small>{{ project.start|date("F Y") }} {% if project.end != "Now" %}- {{ project.end|date("F Y") }} {% endif %}</small>
-                    </h5>
-                    <div>{{ project.contract }} - {{ project.job }}</div>
-                    <div></div>
+            <ul class="no-bullet timeline">
+                {% for project in me.projects %}
+                    <li class="job">
+                    <span class="mark icon-record-plain">
+                    </span>
+                    <span class="year">
+                    {% if project.end == "Now" %}
+                        Aujourd'hui
+                    {% else %}
+                        {{ project.end|date("Y") }}
+                    {% endif %}
+                    </span>
+
+                        <div class="content">
+                            <h5>
+                                {{ project.name }}
+                            </h5>
+
+                            <div>{{ project.contract }} - {{ project.job }}</div>
+                            <div></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                {% endfor %}
+                {% for education in me.educations %}
+                    <li class="school">
+                    <span class="mark icon-record-plain">
+                    </span>
+
+                        <div class="content">
+                            <h5>
+                                {{ education.name }}
+                                <small>{{ education.date|date("F Y") }}</small>
+                            </h5>
+                            <div>{{ education.place }}</div>
+                            <div></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                {% endfor %}
+                <li class="others">
+                    <span class="mark icon-record-plain"></span>
+                    <span class="year">19<b>86</b></span>
+
+                    <div class="content">
+                        <h5>
+                            Naissance d'un être exceptionnel
+                            <small>24 février</small>
+                        </h5>
+                    </div>
+                    <div class="clearfix"></div>
                 </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="skills">
+        <div class="row">
+            <h3>Compétences.
+                <small>Ce qui me permet de créer de magnifiques applications et sites web.</small>
+            </h3>
+
+
+            {% for skill_category in skills %}
+                <div class="skill row">
+                    <h5 class="push-1 columns small-11">{{ skill_category._id.type }}</h5>
+                </div>
+                {% set skills = skill_category.value.skills is defined ? skill_category.value.skills : [skill_category.value] %}
+
+                {% for skill in skills %}
+                    <div class="skill row">
+                        <div class="symbol columns small-1">
+                            <i class="icon icon-{{ skill.icon }}"></i>
+                        </div>
+                        <div class="columns small-11">
+                            <div class="progress small">
+                                <span class="meter" style="width: {{ skill.rating/5*100 }}%">
+                                    {{ skill.name }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             {% endfor %}
-        </ul>
+        </div>
+    </div>
 
-        <h3>Compétences</h3>
+    <div class="hobbies">
+        <div class="row">
+            <h3>Centres d'intérêts.
+                <small>En dehors du travail, là où j'aime le plus dépenser mon temps.</small>
+            </h3>
+            <div class="row">
+                {% for hobby in me.hobbies %}
+                    <div class="hobby large-{{ (12 / me.hobbies|length)|upper }} columns">
+                        <i class="icon icon-{{ hobby.icon }}"></i>
+                        <h5>{{ hobby.name }}</h5>
 
-        {% for skill in me.skills %}
-        {% endfor %}
+                        <div>{{ hobby.details }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}

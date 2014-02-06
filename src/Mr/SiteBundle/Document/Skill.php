@@ -23,6 +23,10 @@ class Skill
      * @MongoDB\Float
      */
     protected $rating;
+    /**
+     * @MongoDB\String
+     */
+    protected $icon;
 
     /**
      * Set name
@@ -99,4 +103,21 @@ class Skill
     {
         return $this->id;
     }
+
+    /**
+     * @param mixed $icon
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
 }

@@ -20,9 +20,9 @@ class Hobby
      */
     protected $details;
     /**
-     * @MongoDB\Float
+     * @MongoDB\String
      */
-    protected $rating;
+    protected $icon;
 
     /**
      * Set name
@@ -69,25 +69,25 @@ class Hobby
     }
 
     /**
-     * Set rating
+     * Set icon
      *
-     * @param float $rating
+     * @param string $icon
      * @return self
      */
-    public function setRating($rating)
+    public function setIcon($icon)
     {
-        $this->rating = $rating;
+        $this->icon = $icon;
         return $this;
     }
 
     /**
-     * Get rating
+     * Get icon
      *
-     * @return float $rating
+     * @return string $icon
      */
-    public function getRating()
+    public function getIcon()
     {
-        return $this->rating;
+        return $this->icon;
     }
 
     /**
