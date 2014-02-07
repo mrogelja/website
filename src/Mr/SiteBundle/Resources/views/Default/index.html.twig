@@ -1,17 +1,17 @@
 {% extends "MrSiteBundle::layout.html.twig" %}
 
 {% block main %}
-    <div class="row">
+    <section class="row">
         <h1>A propos de Moi</h1>
 
         <blockquote>{{ me.summary }}<cite>{{ me.firstName }} {{ me.lastName }}</cite></blockquote>
-    </div>
+    </section>
 
-    <div class="experiences">
+    <section class="experiences">
         <div class="row">
-            <h3>Parcours.
+            <h2>Parcours.
                 <small>Ce que j'ai fait dans ma vie.</small>
-            </h3>
+            </h2>
 
             <ul class="no-bullet timeline">
                 {% for project in me.projects %}
@@ -67,18 +67,18 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="skills">
+    <section class="skills">
         <div class="row">
-            <h3>Compétences.
+            <h2>Compétences.
                 <small>Ce qui me permet de créer de magnifiques applications et sites web.</small>
-            </h3>
+            </h2>
 
 
             {% for skill_category in skills %}
                 <div class="skill row">
-                    <h5 class="push-1 columns small-11">{{ skill_category._id.type }}</h5>
+                    <h3 class="push-1 columns small-11">{{ skill_category._id.type }}</h3>
                 </div>
                 {% set skills = skill_category.value.skills is defined ? skill_category.value.skills : [skill_category.value] %}
 
@@ -98,23 +98,23 @@
                 {% endfor %}
             {% endfor %}
         </div>
-    </div>
+    </section>
 
-    <div class="hobbies">
+    <section class="hobbies">
         <div class="row">
-            <h3>Centres d'intérêts.
+            <h2>Centres d'intérêts.
                 <small>En dehors du travail, là où j'aime le plus dépenser mon temps.</small>
-            </h3>
+            </h2>
             <div class="row">
                 {% for hobby in me.hobbies %}
                     <div class="hobby large-{{ (12 / me.hobbies|length)|upper }} columns">
                         <i class="icon icon-{{ hobby.icon }}"></i>
-                        <h5>{{ hobby.name }}</h5>
+                        <h3>{{ hobby.name }}</h3>
 
                         <div>{{ hobby.details }}</div>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}

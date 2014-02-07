@@ -5,6 +5,7 @@
 body{
   position: relative;
   background: white;
+  -webkit-font-smoothing: antialiased;
 }
 
 .top-bar{
@@ -51,6 +52,10 @@ body{
 nav.ground{
   height: 90px;
   background: #A66C33;
+}
+
+section{
+  padding: 20px 0;
 }
 
 .experiences {
@@ -130,7 +135,10 @@ nav.ground{
 
 .skills {
   background: #A6B9FC;
-  color: #fff;
+
+  &, h2, h3{
+    color: #fff;
+  }
 
   .skill {
     margin: 10px 0;
