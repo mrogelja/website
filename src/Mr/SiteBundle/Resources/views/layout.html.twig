@@ -49,7 +49,22 @@
 </nav>
 
 <header id="sky">
+    {% set weather = get_weather("Paris,fr")|default({id: 800}) %}
+
     {% include  'MrSiteBundle:Svg:pousse.s1.svg.twig' %}
+
+    {% if weather.id in 800..803 %}
+        {% include  'MrSiteBundle:Svg:sun.svg.twig' %}
+    {% endif %}
+
+    {% if weather.id in 801..804 or weather.id < 800 %}
+        {% include  'MrSiteBundle:Svg:white_cloud.svg.twig' %}
+    {% endif %}
+
+    {% if weather.id < 800 %}
+        {% include  'MrSiteBundle:Svg:grey_cloud.svg.twig' %}
+    {% endif %}
+
     {% include  'MrSiteBundle:Svg:moon.svg.twig' %}
     {% for i in range(0, random(30)) %}
         {% include  'MrSiteBundle:Svg:star.svg.twig' with {

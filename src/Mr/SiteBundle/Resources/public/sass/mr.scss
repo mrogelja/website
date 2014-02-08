@@ -1,22 +1,23 @@
 @charset "UTF-8";
 
+@import "compass/css3";
 @import "vars";
 
-body{
+body {
   position: relative;
   background: white;
   -webkit-font-smoothing: antialiased;
 }
 
-.top-bar{
+.top-bar {
   .name h1 a {
     color: #444;
   }
 
-  .top-bar-section.row{
-    .columns{
+  .top-bar-section.row {
+    .columns {
       text-align: center;
-      a{
+      a {
         color: $topbar-link-color;
         font-size: $topbar-link-font-size;
       }
@@ -24,7 +25,7 @@ body{
   }
 }
 
-#sky{
+#sky {
   position: relative;
   background: #9DEAFC;
   height: 500px;
@@ -33,28 +34,38 @@ body{
     position: absolute;
   }
 
-  #Pousse {
+  #pousse {
     bottom: 0;
     left: 10%;
   }
 
-  #Moon {
+  #sun, .white-cloud {
+    top: 50px;
+  }
+
+  .grey-cloud {
+    @include scale(1.1);
+    top: 75px;
+  }
+
+  #moon {
     top: 50px;
     left: 50%;
     margin-left: -85px;
   }
 
-  #Moon, .star {
+  #moon, .star {
     display: none;
   }
+
 }
 
-nav.ground{
+nav.ground {
   height: 90px;
   background: #A66C33;
 }
 
-section{
+section {
   padding: 20px 0;
 }
 
@@ -136,7 +147,7 @@ section{
 .skills {
   background: #A6B9FC;
 
-  &, h2, h3{
+  &, h2, h3 {
     color: #fff;
   }
 
