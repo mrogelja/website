@@ -14,12 +14,21 @@
     background: #2c4859;
 }
 
-#sky #Pousse * {
+#sky #pousse * {
     fill: #181818 !important;
 }
 
-#sky #Moon, #sky .star {
+#sky #moon, #sky .star {
     display: block;
+}
+
+#sky #sun {
+    display: none;
+}
+
+#sky .white-cloud *,
+#sky .grey-cloud * {
+    fill: #181818 !important;
 }
 
 nav.ground {

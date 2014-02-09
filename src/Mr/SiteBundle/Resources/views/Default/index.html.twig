@@ -1,5 +1,25 @@
 {% extends "MrSiteBundle::layout.html.twig" %}
 
+{% macro project(year, name, job, details) %}
+    <span class="mark icon-record-plain"></span>
+    <div class="content">
+        <h5 class="title">
+            <span class="year"> {{ year|raw }} </span>
+            {{ name|raw }}
+        </h5>
+
+        <div>
+            {{ job|raw }}
+        </div>
+        <div>
+            {{ details|raw }}
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{% endmacro %}
+
+{% import _self as macros %}
+
 {% block main %}
     <section class="row">
         <h1>A propos de Moi</h1>
@@ -14,56 +34,22 @@
             </h2>
 
             <ul class="no-bullet timeline">
+                <li class="future">
+                    {{ macros.project("20<b>??</b>", "Pourquoi pas vous ?", "(Haute-)Savoie", "") }}
+                </li>
                 {% for project in me.projects %}
                     <li class="job">
-                    <span class="mark icon-record-plain">
-                    </span>
-                    <span class="year">
-                    {% if project.end == "Now" %}
-                        Aujourd'hui
-                    {% else %}
-                        {{ project.end|date("Y") }}
-                    {% endif %}
-                    </span>
-
-                        <div class="content">
-                            <h5>
-                                {{ project.name }}
-                            </h5>
-
-                            <div>{{ project.contract }} - {{ project.job }}</div>
-                            <div></div>
-                        </div>
-                        <div class="clearfix"></div>
+                        {{ macros.project(project.end|date("Y"), project.name, "#{project.contract} - #{project.job}", project.details) }}
                     </li>
                 {% endfor %}
+
                 {% for education in me.educations %}
                     <li class="school">
-                    <span class="mark icon-record-plain">
-                    </span>
-
-                        <div class="content">
-                            <h5>
-                                {{ education.name }}
-                                <small>{{ education.date|date("F Y") }}</small>
-                            </h5>
-                            <div>{{ education.place }}</div>
-                            <div></div>
-                        </div>
-                        <div class="clearfix"></div>
+                        {{ macros.project(education.date|date("Y"), education.name, education.place, "") }}
                     </li>
                 {% endfor %}
                 <li class="others">
-                    <span class="mark icon-record-plain"></span>
-                    <span class="year">19<b>86</b></span>
-
-                    <div class="content">
-                        <h5>
-                            Naissance d'un être exceptionnel
-                            <small>24 février</small>
-                        </h5>
-                    </div>
-                    <div class="clearfix"></div>
+                    {{ macros.project("19<b>86</b>", " Naissance d'un être exceptionnel", "Dijon", "") }}
                 </li>
             </ul>
         </div>
@@ -78,21 +64,23 @@
 
             {% for skill_category in skills %}
                 <div class="skill row">
-                    <h3 class="push-1 columns small-11">{{ skill_category._id.type }}</h3>
+                    <h3 class="columns small-12">{{ skill_category._id.type }}</h3>
                 </div>
                 {% set skills = skill_category.value.skills is defined ? skill_category.value.skills : [skill_category.value] %}
 
                 {% for skill in skills %}
                     <div class="skill row">
-                        <div class="symbol columns small-1">
-                            <i class="icon icon-{{ skill.icon }}"></i>
-                        </div>
-                        <div class="columns small-11">
+                        <div class="columns small-9">
+                            <div class="symbol">
+                                <i class="icon icon-{{ skill.icon }}"></i>
+                            </div>
                             <div class="progress small">
-                                <span class="meter" style="width: {{ skill.rating/5*100 }}%">
+                                <span class="meter minify" style="width: {{ skill.rating/5*100 }}%">
                                     {{ skill.name }}
                                 </span>
                             </div>
+                        </div>
+                        <div class="columns small-3">
                         </div>
                     </div>
                 {% endfor %}
@@ -109,6 +97,7 @@
                 {% for hobby in me.hobbies %}
                     <div class="hobby large-{{ (12 / me.hobbies|length)|upper }} columns">
                         <i class="icon icon-{{ hobby.icon }}"></i>
+
                         <h3>{{ hobby.name }}</h3>
 
                         <div>{{ hobby.details }}</div>
@@ -117,4 +106,13 @@
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(".meter").one("inview", function () {
+            console.log("view");
+            $(this).removeClass("minimize");
+        });
+    </script>
 {% endblock %}

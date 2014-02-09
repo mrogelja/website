@@ -8,14 +8,13 @@
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
     src: url('../font/fontello.svg?46911407#fontello') format('svg');
   }
 }
-*/
 
 /*
    Animation example, for spinners
@@ -146,10 +145,33 @@
 .icon-js:before { content: '\e808'; } /* '' */
 .icon-mysql:before { content: '\e809'; } /* '' */
 .icon-travel:before { content: '\e80b'; } /* '' */
+.icon-mongo:before {
+  content: '\e80c';
+}
+
+/* '' */
 .icon-php:before { content: '\e804'; } /* '' */
-.icon-symfony:before { content: '\e80d'; } /* '' */
+.icon-doctrine:before {
+  content: '\e80e';
+}
+
+/* '' */
+.icon-propel:before {
+  content: '\e80f';
+}
+
+/* '' */
+.icon-svn:before {
+  content: '\e810';
+}
+
+/* '' */
 .icon-code:before { content: '\e802'; } /* '' */
 .icon-css:before { content: '\e80a'; } /* '' */
 .icon-record-plain:before { content: '\e801'; } /* '' */
 .icon-html:before { content: '\e807'; } /* '' */
-.icon-mongo:before { content: '\e80c'; } /* '' */
+.icon-symfony:before {
+  content: '\e80d';
+}
+
+/* '' */

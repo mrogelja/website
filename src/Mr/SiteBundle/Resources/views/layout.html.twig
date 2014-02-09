@@ -57,14 +57,6 @@
         {% include  'MrSiteBundle:Svg:sun.svg.twig' %}
     {% endif %}
 
-    {% if weather.id in 801..804 or weather.id < 800 %}
-        {% include  'MrSiteBundle:Svg:white_cloud.svg.twig' %}
-    {% endif %}
-
-    {% if weather.id < 800 %}
-        {% include  'MrSiteBundle:Svg:grey_cloud.svg.twig' %}
-    {% endif %}
-
     {% include  'MrSiteBundle:Svg:moon.svg.twig' %}
     {% for i in range(0, random(30)) %}
         {% include  'MrSiteBundle:Svg:star.svg.twig' with {
@@ -73,6 +65,14 @@
         scale: random(60) / 100 ,
         rotate: random(90)} %}
     {% endfor %}
+
+    {% if weather.id in 801..804 or weather.id < 800 %}
+        {% include  'MrSiteBundle:Svg:white_cloud.svg.twig' %}
+    {% endif %}
+
+    {% if weather.id < 800 %}
+        {% include  'MrSiteBundle:Svg:grey_cloud.svg.twig' %}
+    {% endif %}
 </header>
 
 
@@ -86,9 +86,13 @@
     {% endblock %}
 </section>
 
-<script src="{{ asset('bundles/mrsite/js/jquery.js') }}"></script>
-<script src="{{ asset('bundles/mrsite/js/foundation.min.js') }}"></script>
-<script src="{{ asset('bundles/mrsite/js/snap.svg-min.js') }}"></script>
+{% javascripts
+"@MrSiteBundle/Resources/public/js/jquery.js"
+"@MrSiteBundle/Resources/public/js/foundation.min.js"
+"@MrSiteBundle/Resources/public/js/snap.svg-min.js"
+"@MrSiteBundle/Resources/public/js/jquery.inview.min.js" %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 
 <script>
     $(document).foundation();
@@ -96,9 +100,13 @@
     var d = new Date();
 
     // This is night !
-    if (d.getHours() > 20 || d.getHours() < 8) {
-        {#$('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');#}
+    if (d.getHours() >= 20 || d.getHours() < 8) {
+        $('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
     }
 </script>
+
+{% block scripts %}
+{% endblock %}
+
 </body>
 </html>

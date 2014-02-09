@@ -1,36 +1,47 @@
 @charset "UTF-8";
 
-.top-bar{
+.top-bar {
   background: #222;
 
   .name h1 a {
     color: #fff;
   }
 
-  .top-bar-section.row{
-    .columns{
-      a{
+  .top-bar-section.row {
+    .columns {
+      a {
         color: #fff;
       }
     }
   }
 }
 
-
-#sky{
+#sky {
   background: #2c4859;
 
-  #Pousse{
+  #pousse {
     * {
       fill: #181818 !important;
     }
   }
 
-  #Moon, .star {
+  #moon, .star {
     display: block;
   }
+
+  #sun {
+    display: none;
+  }
+
+  .white-cloud,
+  .grey-cloud {
+    * {
+      fill: #181818 !important;
+    }
+  }
+
 }
 
-nav.ground{
+nav.ground {
   background: #584026;
 }

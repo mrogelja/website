@@ -39,19 +39,14 @@ body {
     left: 10%;
   }
 
-  #sun, .white-cloud {
+  #sun, .white-cloud, #moon {
     top: 50px;
+    right: 25%;
   }
 
   .grey-cloud {
     @include scale(1.1);
     top: 75px;
-  }
-
-  #moon {
-    top: 50px;
-    left: 50%;
-    margin-left: -85px;
   }
 
   #moon, .star {
@@ -96,10 +91,15 @@ section {
         margin-top: -15px;
       }
 
+      .content {
+        .title {
+          position: relative;
+        }
+      }
+
       .year {
         position: absolute;
-        left: -80px;
-        top: -15px;
+        left: -110px;
         font-size: 20px;
       }
 
@@ -129,6 +129,17 @@ section {
         }
       }
 
+      &:first-of-type {
+        $first-color: #FFCD9C;
+
+        padding: 50px 0;
+        border-left-style: dotted;
+        border-color: $first-color;
+        .mark {
+          color: $first-color;
+        }
+      }
+
       &:last-of-type {
         $last-color: #ccc;
 
@@ -154,10 +165,36 @@ section {
   .skill {
     margin: 10px 0;
 
+    h3, .progress {
+      margin-left: 50px;
+    }
+
     .symbol {
-      text-align: right;
+      float: left;
+      text-align: center;
       .icon {
         font-size: 2rem;
+
+        &.icon-svn {
+          font-size: 1.5rem;
+        }
+
+        &.icon-symfony,
+        &.icon-code,
+        &.icon-mysql,
+        &.icon-mongo,
+        &.icon-doctrine,
+        &.icon-propel {
+          font-size: 1.8rem;
+        }
+
+        &.icon-css {
+          font-size: 1.7rem;
+        }
+
+        &.icon-php {
+          font-size: 2.1rem;
+        }
       }
     }
 

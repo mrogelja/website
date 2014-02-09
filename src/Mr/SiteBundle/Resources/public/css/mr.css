@@ -40,8 +40,9 @@ body {
     left: 10%;
 }
 
-#sky #sun, #sky .white-cloud {
+#sky #sun, #sky .white-cloud, #sky #moon {
     top: 50px;
+    right: 25%;
 }
 
 #sky .grey-cloud {
@@ -51,12 +52,6 @@ body {
     -o-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
     top: 75px;
-}
-
-#sky #moon {
-    top: 50px;
-    left: 50%;
-    margin-left: -85px;
 }
 
 #sky #moon, #sky .star {
@@ -94,10 +89,13 @@ section {
     margin-top: -15px;
 }
 
+.experiences .timeline li .content .title {
+    position: relative;
+}
+
 .experiences .timeline li .year {
     position: absolute;
-    left: -80px;
-    top: -15px;
+    left: -110px;
     font-size: 20px;
 }
 
@@ -126,6 +124,16 @@ section {
     color: #71a6b3;
 }
 
+.experiences .timeline li:first-of-type {
+    padding: 50px 0;
+    border-left-style: dotted;
+    border-color: #ffcd9c;
+}
+
+.experiences .timeline li:first-of-type .mark {
+    color: #ffcd9c;
+}
+
 .experiences .timeline li:last-of-type {
     padding-top: 86px;
     border-left-style: dotted;
@@ -148,12 +156,33 @@ section {
     margin: 10px 0;
 }
 
+.skills .skill h3, .skills .skill .progress {
+    margin-left: 50px;
+}
+
 .skills .skill .symbol {
-    text-align: right;
+    float: left;
+    text-align: center;
 }
 
 .skills .skill .symbol .icon {
     font-size: 2rem;
+}
+
+.skills .skill .symbol .icon.icon-svn {
+    font-size: 1.5rem;
+}
+
+.skills .skill .symbol .icon.icon-symfony, .skills .skill .symbol .icon.icon-code, .skills .skill .symbol .icon.icon-mysql, .skills .skill .symbol .icon.icon-mongo, .skills .skill .symbol .icon.icon-doctrine, .skills .skill .symbol .icon.icon-propel {
+    font-size: 1.8rem;
+}
+
+.skills .skill .symbol .icon.icon-css {
+    font-size: 1.7rem;
+}
+
+.skills .skill .symbol .icon.icon-php {
+    font-size: 2.1rem;
 }
 
 .skills .skill .progress {
