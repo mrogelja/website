@@ -63,9 +63,15 @@
         },
         {
             "type": "Dev language",
-            "name": "C, C++, C#, Python, Ruby",
+            "name": "C, C++, C#",
+            "rating": 3,
+            "icon": "cplusplus"
+        },
+        {
+            "type": "Dev language",
+            "name": "Python, Ruby",
             "rating": 4,
-            "icon": "code"
+            "icon": "python"
         },
         {
             "type": "Framework",
@@ -75,20 +81,27 @@
         },
         {
             "type": "Framework",
-            "name": "Doctrine, Propel",
+            "name": "Propel ORM",
             "rating": 5,
+            "icon": "propel"
+        },
+        {
+            "type": "Framework",
+            "name": "Doctrine ORM, ODM",
+            "rating": 4,
             "icon": "doctrine"
         },
         {
             "type": "Framework",
             "name": "ExtJs, JQuery, KnockoutJS",
             "rating": 5,
-            "icon": "php"
+            "icon": "js"
         },
         {
             "type": "Framework",
             "name": "PrototypeJs, BackboneJS, AngularJs",
-            "rating": 5
+            "rating": 3,
+            "icon": "js"
         },
         {
             "type": "Version control",
@@ -109,7 +122,7 @@
             "start": "2008-10-01",
             "end": "Now",
             "contract": "CDI",
-            "jon": "Chef de projet Hypermedia",
+            "job": "Chef de projet Hypermedia",
             "details": ""
         },
         {

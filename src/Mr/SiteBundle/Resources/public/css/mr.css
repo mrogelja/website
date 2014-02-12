@@ -177,7 +177,7 @@ section {
     font-size: 1.8rem;
 }
 
-.skills .skill .symbol .icon.icon-css {
+.skills .skill .symbol .icon.icon-css, .skills .skill .symbol .icon.icon-python, .skills .skill .symbol .icon.icon-cplusplus {
     font-size: 1.7rem;
 }
 
@@ -194,8 +194,16 @@ section {
 }
 
 .skills .skill .progress .meter {
+    -webkit-transition: width 1s, 1s;
+    -moz-transition: width 1s, 1s;
+    -o-transition: width 1s, 1s;
+    transition: width 1s, 1s;
     padding-left: 15px;
     background: #8D97BD;
+}
+
+.skills .skill .progress .meter.minify {
+    width: 25% !important;
 }
 
 .hobbies .hobby {
@@ -205,4 +213,8 @@ section {
 
 .hobbies .hobby .icon {
     font-size: 6rem;
+}
+
+.hobbies .hobby .icon.icon-savoie {
+    font-size: 7rem;
 }

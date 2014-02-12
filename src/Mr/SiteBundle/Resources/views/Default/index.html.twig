@@ -110,9 +110,11 @@
 
 {% block scripts %}
     <script>
-        $(".meter").one("inview", function () {
-            console.log("view");
-            $(this).removeClass("minimize");
+        console.log($(".meter"));
+        $(".meter").each(function () {
+            $(this).one("inview", function (event, isInView, visiblePartX, visiblePartY) {
+                $(this).removeClass("minify");
+            });
         });
     </script>
 {% endblock %}

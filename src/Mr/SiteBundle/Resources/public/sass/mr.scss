@@ -188,7 +188,9 @@ section {
           font-size: 1.8rem;
         }
 
-        &.icon-css {
+        &.icon-css,
+        &.icon-python,
+        &.icon-cplusplus {
           font-size: 1.7rem;
         }
 
@@ -206,8 +208,13 @@ section {
       height: auto;
 
       .meter {
+        @include single-transition(width 1s);
         padding-left: 15px;
         background: #8D97BD;
+
+        &.minify {
+          width: 25% !important;
+        }
       }
     }
   }
@@ -220,6 +227,10 @@ section {
 
     .icon {
       font-size: 6rem;
+
+      &.icon-savoie {
+        font-size: 7rem;
+      }
     }
   }
 }

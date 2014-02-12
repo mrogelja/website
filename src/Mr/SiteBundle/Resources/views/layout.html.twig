@@ -15,9 +15,20 @@
     {% endstylesheets %}
 
     <script src="{{ asset('bundles/mrsite/js/modernizr.js') }}"></script>
+    <script>
+        var d = new Date();
+
+        // This is night !
+        if (d.getHours() >= 20 || d.getHours() < 8) {
+            var link = document.createElement('link');
+            link.href = "{{ asset('bundles/mrsite/css/mr-night.css') }}";
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
 </head>
 <body>
-
 <nav class="top-bar" data-topbar>
     <div class="row">
         <div class=" medium-4 columns">
@@ -96,13 +107,6 @@
 
 <script>
     $(document).foundation();
-
-    var d = new Date();
-
-    // This is night !
-    if (d.getHours() >= 20 || d.getHours() < 8) {
-        $('head').append('<link rel="stylesheet" href="{{ asset('bundles/mrsite/css/mr-night.css') }}" type="text/css" />');
-    }
 </script>
 
 {% block scripts %}

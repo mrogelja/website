@@ -150,18 +150,28 @@
 }
 
 /* '' */
-.icon-php:before { content: '\e804'; } /* '' */
-.icon-doctrine:before {
-  content: '\e80e';
+.icon-symfony:before {
+  content: '\e80d';
 }
 
-/* '' */
+/* '' */
+.icon-php:before { content: '\e804'; } /* '' */
 .icon-propel:before {
   content: '\e80f';
 }
 
 /* '' */
 .icon-svn:before {
+  content: '\e812';
+}
+
+/* '' */
+.icon-cplusplus:before {
+  content: '\e811';
+}
+
+/* '' */
+.icon-python:before {
   content: '\e810';
 }
 
@@ -170,8 +180,8 @@
 .icon-css:before { content: '\e80a'; } /* '' */
 .icon-record-plain:before { content: '\e801'; } /* '' */
 .icon-html:before { content: '\e807'; } /* '' */
-.icon-symfony:before {
-  content: '\e80d';
+.icon-doctrine:before {
+  content: '\e80e';
 }
 
-/* '' */
+/* '' */
