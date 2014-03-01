@@ -9,10 +9,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/", name="profile")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction()
     {
         $me = $this->get('doctrine_mongodb')
             ->getRepository('MrSiteBundle:Me')

@@ -11,7 +11,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/mrogelja/init-cms-bundle.git"
+            "url": "https://github.com/mrogelja/CreateBundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/mrogelja/createphp.git"
         }
     ],
     "require": {
@@ -29,7 +33,8 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "endroid/openweathermap-bundle": "dev-master",
-        "jms/security-extra-bundle": "~1.5"
+        "jms/security-extra-bundle": "~1.5",
+        "symfony-cmf/create-bundle": "dev-propel-orm"
     },
     "scripts": {
         "post-install-cmd": [
@@ -44,7 +49,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor"
         ]
     },
     "config": {
@@ -59,7 +65,15 @@
         "branch-alias": {
             "dev-master": "2.4-dev"
         },
-        "symfony-assets-install": "relative"
+        "symfony-assets-install": "symlink",
+
+        "create-directory": "vendor/symfony-cmf/create-bundle/Symfony/Cmf/Bundle/CreateBundle/Resources/public/vendor/create",
+        "create-repository": "https://github.com/bergie/create.git",
+        "create-commit": "a148ce9633535930d7b4b70cc1088102f5c5eb90",
+
+        "ckeditor-directory": "vendor/symfony-cmf/create-bundle/Symfony/Cmf/Bundle/CreateBundle/Resources/public/vendor/ckeditor",
+        "ckeditor-repository": "https://github.com/ckeditor/ckeditor-releases.git",
+        "ckeditor-commit": "bba29309f93a1ace1e2e3a3bd086025975abbad0"
     },
     "minimum-stability": "dev"
 }

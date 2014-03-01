@@ -1,0 +1,34 @@
+{% extends "MrSiteBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    {% render(controller(
+    "cmf_create.jsloader.controller:includeJSFilesAction",
+    {'_locale': app.request.locale}
+    )) %}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <h1>Le blog</h1>
+        <blockquote>
+            Alors, quoi de neuf docteur ?
+        </blockquote>
+
+        <ul class="no-bullet">
+            {% for post in posts %}
+                {% createphp cmfMainContent as="rdf" noautotag %}
+                <div {{ createphp_attributes(rdf) }}>
+                    <h2 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
+                    <section {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</section>
+                </div>
+                {% endcreatephp %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

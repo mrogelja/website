@@ -17,6 +17,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Endroid\Bundle\OpenWeatherMapBundle\EndroidOpenWeatherMapBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new FOS\RestBundle\FOSRestBundle(),
+            new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new Mr\SiteBundle\MrSiteBundle(),
         );
 

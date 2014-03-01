@@ -33,7 +33,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ MrSiteBundle ]
+    bundles:        [ MrSiteBundle, CmfCreateBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -81,3 +81,11 @@ swiftmailer:
 
 endroid_open_weather_map:
     api_key: "88d7a5ce49c553703a5ae44169b7f490"
+
+fos_rest:
+    view:
+        formats:
+            json: true
+
+cmf_create :
+  object_mapper_service_id : cmf_create.doctrine_mongodb_mapper

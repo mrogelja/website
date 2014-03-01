@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mr - Mathieu Rogelja</title>
+    <title>{% block title %}Mr - Mathieu Rogelja{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}"/>
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}"/>
 
     {% stylesheets
     'bundles/mrsite/css/normalize.css'
@@ -13,6 +15,8 @@
     filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
+
+    {% block stylesheets %}{% endblock %}
 
     <script src="{{ asset('bundles/mrsite/js/modernizr.js') }}"></script>
     <script>
@@ -42,13 +46,13 @@
         <div class="medium-4 columns">
             <div class="top-bar-section row">
                 <div class="medium-4 columns">
-                    <a href="#">Profil</a>
+                    <a href="{{ path("profile") }}">Profil</a>
                 </div>
                 <div class="medium-4 columns">
-                    <a href="#">Blog</a>
+                    <a href="{{ path("blog") }}">Blog</a>
                 </div>
                 <div class="medium-4 columns">
-                    <a href="#">Labo</a>
+                    <a href="{{ path("labo") }}">Labo</a>
                 </div>
             </div>
         </div>
