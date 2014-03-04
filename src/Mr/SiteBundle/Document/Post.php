@@ -57,6 +57,11 @@ class Post
     protected $slug;
 
     /**
+     * @MongoDB\ReferenceOne(targetDocument="Mr\SiteBundle\Document\Address", simple=true)
+     */
+    protected $image;
+
+    /**
      * Get id
      *
      * @return id $id
@@ -218,5 +223,27 @@ class Post
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set image
+     *
+     * @param file $image
+     * @return self
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return file $image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

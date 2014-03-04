@@ -31,16 +31,6 @@ class BlogController extends Controller
             ->getRepository('MrSiteBundle:Post')
             ->findBySection("blog");
 
-//        $post = new \Mr\SiteBundle\Document\Post();
-//        $post->setTitle('test fkljf flksdjfl');
-//        $post->setTitle('Contentu fdsdlkfj');
-//
-//        $dm = $this->get('doctrine_mongodb')
-//            ->getManager();
-//
-//        $dm->persist($post);
-//        $dm->flush();
-
         return array(
             "posts" => $posts
         );

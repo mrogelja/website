@@ -1,36 +1,30 @@
 .top-bar {
-    background: #222;
+  background: #222;
 }
-
 .top-bar .name h1 a {
-    color: #fff;
+  color: #fff;
 }
-
 .top-bar .top-bar-section.row .columns a {
-    color: #fff;
+  color: #fff;
 }
 
 #sky {
-    background: #2c4859;
+  background: #2c4859;
 }
-
 #sky #pousse * {
-    fill: #181818 !important;
+  fill: #181818 !important;
 }
-
 #sky #moon, #sky .star {
-    display: block;
+  display: block;
 }
-
 #sky #sun {
-    display: none;
+  display: none;
 }
-
 #sky .white-cloud *,
 #sky .grey-cloud * {
-    fill: #181818 !important;
+  fill: #181818 !important;
 }
 
 nav.ground {
-    background: #584026;
+  background: #584026;
 }

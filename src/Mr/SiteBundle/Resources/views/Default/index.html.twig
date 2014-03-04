@@ -4,8 +4,6 @@
 {% block sky %}
     {% set weather = get_weather("Paris,fr")|default({id: 800}) %}
 
-    {% include  'MrSiteBundle:Svg:pousse.s1.svg.twig' %}
-
     {% if weather.id in 800..803 %}
         {% include  'MrSiteBundle:Svg:sun.svg.twig' %}
     {% endif %}

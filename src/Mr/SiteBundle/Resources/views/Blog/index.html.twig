@@ -12,6 +12,7 @@
     <div class="row">
         <ul class="no-bullet">
             {% for post in posts %}
+                <img src="{{ path("ressource", { "id" : post.image.id }) }}">
                 <h3>{{ post.title }}</h3>
                 <section> {{ post.summary|raw }}</section>
                 <a href="{{ path("blog_post", {"id" : post.id, "slug" : post.slug}) }}">Lire tout</a>
