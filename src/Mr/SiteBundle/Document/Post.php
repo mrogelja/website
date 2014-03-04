@@ -10,6 +10,7 @@
 namespace Mr\SiteBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @MongoDB\Document(collection="posts")
@@ -30,11 +31,18 @@ class Post
      * @MongoDB\String
      */
     protected $title;
+
     /**
+     * @MongoDB\String
+     */
+    protected $summary;
+    /**
+     * @Gedmo\Timestampable(on="create")
      * @MongoDB\Date
      */
     protected $createdAt;
     /**
+     * @Gedmo\Timestampable(on="update")
      * @MongoDB\Date
      */
     protected $lastModificationAt;
@@ -42,6 +50,11 @@ class Post
      * @MongoDB\String
      */
     protected $content;
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @MongoDB\String
+     */
+    protected $slug;
 
     /**
      * Get id
@@ -161,5 +174,49 @@ class Post
     public function getSection()
     {
         return $this->section;
+    }
+
+    /**
+     * Set summary
+     *
+     * @param string $summary
+     * @return self
+     */
+    public function setSummary($summary)
+    {
+        $this->summary = $summary;
+        return $this;
+    }
+
+    /**
+     * Get summary
+     *
+     * @return string $summary
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return self
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string $slug
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

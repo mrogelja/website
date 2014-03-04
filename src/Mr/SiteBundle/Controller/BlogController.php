@@ -9,6 +9,7 @@
 
 namespace Mr\SiteBundle\Controller;
 
+use Mr\SiteBundle\MrSiteBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -30,8 +31,33 @@ class BlogController extends Controller
             ->getRepository('MrSiteBundle:Post')
             ->findBySection("blog");
 
+//        $post = new \Mr\SiteBundle\Document\Post();
+//        $post->setTitle('test fkljf flksdjfl');
+//        $post->setTitle('Contentu fdsdlkfj');
+//
+//        $dm = $this->get('doctrine_mongodb')
+//            ->getManager();
+//
+//        $dm->persist($post);
+//        $dm->flush();
+
         return array(
             "posts" => $posts
+        );
+    }
+
+    /**
+     * @Route("/post/{id}/{slug}", name="blog_post")
+     * @Template()
+     */
+    public function postAction($id, $slug)
+    {
+        $post = $this->get('doctrine_mongodb')
+            ->getRepository('MrSiteBundle:Post')
+            ->find($id);
+
+        return array(
+            "post" => $post
         );
     }
 }

@@ -70,7 +70,6 @@ doctrine_mongodb:
         default:
             auto_mapping: true
 
-
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -89,3 +88,12 @@ fos_rest:
 
 cmf_create :
   object_mapper_service_id : cmf_create.doctrine_mongodb_mapper
+  security:
+    role: IS_AUTHENTICATED_ANONYMOUSLY
+
+stof_doctrine_extensions:
+  default_locale: %locale%
+  mongodb:
+    default:
+      sluggable: true
+      timestampable: true

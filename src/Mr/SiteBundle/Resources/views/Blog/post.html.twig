@@ -1,0 +1,27 @@
+{% extends "MrSiteBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    {% render(controller(
+    "cmf_create.jsloader.controller:includeJSFilesAction",
+    {'_locale': app.request.locale}
+    )) %}
+{% endblock %}
+{% block main %}
+    <div class="row">
+        {% createphp post as="rdf" noautotag %}
+        <div {{ createphp_attributes(rdf) }}>
+            <h1 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h1>
+            <blockquote {{ createphp_attributes( rdf.summary ) }}>
+                {{ createphp_content( rdf.summary ) }}
+            </blockquote>
+            <section {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</section>
+        </div>
+        {% endcreatephp %}
+    </div>
+{% endblock %}

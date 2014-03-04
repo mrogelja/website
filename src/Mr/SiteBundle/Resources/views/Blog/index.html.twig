@@ -1,33 +1,20 @@
 {% extends "MrSiteBundle::layout.html.twig" %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+{% block sky %}
+    <h1>Le blog</h1>
+    <h2>
+        Alors, quoi de neuf docteur ?
+    </h2>
 {% endblock %}
 
-{% block scripts %}
-    {{ parent() }}
-    {% render(controller(
-    "cmf_create.jsloader.controller:includeJSFilesAction",
-    {'_locale': app.request.locale}
-    )) %}
-{% endblock %}
 
 {% block main %}
     <div class="row">
-        <h1>Le blog</h1>
-        <blockquote>
-            Alors, quoi de neuf docteur ?
-        </blockquote>
-
         <ul class="no-bullet">
             {% for post in posts %}
-                {% createphp cmfMainContent as="rdf" noautotag %}
-                <div {{ createphp_attributes(rdf) }}>
-                    <h2 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
-                    <section {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</section>
-                </div>
-                {% endcreatephp %}
+                <h3>{{ post.title }}</h3>
+                <section> {{ post.summary|raw }}</section>
+                <a href="{{ path("blog_post", {"id" : post.id, "slug" : post.slug}) }}">Lire tout</a>
             {% endfor %}
         </ul>
     </div>

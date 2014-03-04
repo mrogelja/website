@@ -28,11 +28,11 @@
             link.href = "{{ asset('bundles/mrsite/css/mr-night.css') }}";
             link.rel = "stylesheet";
             link.type = "text/css";
-            document.getElementsByTagName('head')[0].appendChild(link);
+//            document.getElementsByTagName('head')[0].appendChild(link);
         }
     </script>
 </head>
-<body>
+<body class="{{ body_class|default('') }}">
 <nav class="top-bar" data-topbar>
     <div class="row">
         <div class=" medium-4 columns">
@@ -64,30 +64,8 @@
 </nav>
 
 <header id="sky">
-    {% set weather = get_weather("Paris,fr")|default({id: 800}) %}
-
-    {% include  'MrSiteBundle:Svg:pousse.s1.svg.twig' %}
-
-    {% if weather.id in 800..803 %}
-        {% include  'MrSiteBundle:Svg:sun.svg.twig' %}
-    {% endif %}
-
-    {% include  'MrSiteBundle:Svg:moon.svg.twig' %}
-    {% for i in range(0, random(30)) %}
-        {% include  'MrSiteBundle:Svg:star.svg.twig' with {
-        x: random(100),
-        y : random(70),
-        scale: random(60) / 100 ,
-        rotate: random(90)} %}
-    {% endfor %}
-
-    {% if weather.id in 801..804 or weather.id < 800 %}
-        {% include  'MrSiteBundle:Svg:white_cloud.svg.twig' %}
-    {% endif %}
-
-    {% if weather.id < 800 %}
-        {% include  'MrSiteBundle:Svg:grey_cloud.svg.twig' %}
-    {% endif %}
+    {% block sky %}
+    {% endblock %}
 </header>
 
 

@@ -1,0 +1,10 @@
+{
+    "_id": ObjectId("531346d40fa8943c18000037"),
+"content" : "<p>Et pourquoi pas ?</p>\n",
+"createdAt" : ISODate("2014-03-02T14:57:24.000Z"),
+"lastModificationAt" : ISODate("2014-03-03T19:50:59.000Z"),
+"section" : "blog",
+"slug" : "test-encore-plus-propre",
+"summary" : "<p>Essai. 2</p>\n",
+"title" : "Test encore plus propre"
+}

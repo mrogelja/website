@@ -28,7 +28,24 @@ body {
 #sky {
   position: relative;
   background: #9DEAFC;
-  height: 500px;
+  height: 280px;
+
+  body.profile & {
+    height: 500px;
+  }
+
+  h1, h2 {
+    margin: 0;
+    padding-top: 30px;
+    padding-left: 60px;
+    font-size: 5em;
+    color: white;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-top: -10px;
+  }
 
   svg {
     position: absolute;

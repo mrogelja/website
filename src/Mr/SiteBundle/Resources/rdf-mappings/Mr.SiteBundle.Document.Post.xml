@@ -1,10 +1,10 @@
-<!-- Resources/rdf-mappings/Symfony.Cmf.Bundle.ContentBundle.Doctrine.Phpcr.StaticContent.xml -->
 <type
         xmlns:schema="http://schema.org/"
         typeof="schema:WebPage"
         >
     <children>
         <property property="schema:headline" identifier="title"/>
+        <property property="schema:about" identifier="summary"/>
         <property property="schema:text" identifier="content"/>
     </children>
 </type>
