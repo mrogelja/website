@@ -1,0 +1,51 @@
+{% extends "MrSiteBundle::layout.html.twig" %}
+
+{% block sky %}
+    <h1>Le blog</h1>
+    <h2>
+        Alors, quoi de neuf docteur ?
+    </h2>
+{% endblock %}
+
+{% set rand = "ux#{random()}" %}
+
+{% block main %}
+    <div id="{{ rand }}" class="row">
+        <ul class="no-bullet" data-bind="foreach : { data : posts }">
+            <div class="row">
+                <div class="columns medium-1">
+                    <div class="day" data-bind="text: moment(created_at()).format('D')"></div>
+                    <div class="month" data-bind="text: moment(created_at()).format('MMM')"></div>
+                </div>
+                <div class="columns medium-11">
+                    <a data-bind="attr : { 'href' : '{{ path("blog_post", {"id" : "+id+", "slug" : "+slug+"}) }}'.replace('+id+', id()).replace('+slug+', slug()) }">
+                        <h2 data-bind="text: title"></h2>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <img data-bind="attr : { 'src' : '{{ path("ressource", { "id" : "+id+" }) }}'.replace('+id+', image.id()) }" >
+                <section data-bind="text: summary"></section>
+            </div>
+        </ul>
+    </div>
+
+    <div id="reveal"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('bundles/mrsite/js/knockoutjs/knockout.js') }}"></script>
+    <script src="{{ asset('bundles/mrsite/js/knockoutjs/knockout.mapping.js') }}"></script>
+
+    <script>
+        (function(){
+            window["{{ rand }}"] = function(){
+                var self = this;
+                self.posts = ko.mapping.fromJS({{ posts|serialize('json')|raw }});
+
+            };
+
+            ko.applyBindings(new window["{{ rand }}"](), $("{{ rand }}").dom);
+        })();
+    </script>
+{% endblock %}

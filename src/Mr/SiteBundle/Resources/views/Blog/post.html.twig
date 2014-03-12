@@ -1,17 +1,17 @@
 {% extends "MrSiteBundle::layout.html.twig" %}
 
-{#{% block stylesheets %}#}
-    {#{{ parent() }}#}
-    {#{% include "CmfCreateBundle::includecssfiles.html.twig" %}#}
-{#{% endblock %}#}
+{% block stylesheets %}
+    {{ parent() }}
+    {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+{% endblock %}
 
-{#{% block scripts %}#}
-    {#{{ parent() }}#}
-    {#{% render(controller(#}
-    {#"cmf_create.jsloader.controller:includeJSFilesAction",#}
-    {#{'_locale': app.request.locale}#}
-    {#)) %}#}
-{#{% endblock %}#}
+{% block scripts %}
+    {{ parent() }}
+    {% render(controller(
+    "cmf_create.jsloader.controller:includeJSFilesAction",
+    {'_locale': app.request.locale}
+    )) %}
+{% endblock %}
 
 {% block main %}
     <div class="row">

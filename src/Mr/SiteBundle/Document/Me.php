@@ -3,6 +3,7 @@
 namespace Mr\SiteBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * @MongoDB\Document(collection="me")
@@ -40,10 +41,12 @@ class Me
     protected $phone;
     /**
      * @MongoDB\EmbedOne(targetDocument="Mr\SiteBundle\Document\Address")
+     * @Type("Mr\SiteBundle\Document\Address")
      */
     protected $address;
     /**
      * @MongoDB\EmbedMany(targetDocument="Mr\SiteBundle\Document\Skill")
+     *
      */
     protected $skills;
     /**

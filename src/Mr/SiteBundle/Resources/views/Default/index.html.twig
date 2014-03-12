@@ -136,7 +136,6 @@
 
 {% block scripts %}
     <script>
-        console.log($(".meter"));
         $(".meter").each(function () {
             $(this).one("inview", function (event, isInView, visiblePartX, visiblePartY) {
                 $(this).removeClass("minify");

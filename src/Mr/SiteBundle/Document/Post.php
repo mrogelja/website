@@ -57,9 +57,13 @@ class Post
     protected $slug;
 
     /**
-     * @MongoDB\ReferenceOne(targetDocument="Mr\SiteBundle\Document\Address", simple=true)
+     * @MongoDB\ReferenceOne(targetDocument="Mr\SiteBundle\Document\Upload")
      */
     protected $image;
+    /**
+     * @MongoDB\Boolean
+     */
+    protected $isDraft;
 
     /**
      * Get id
@@ -245,5 +249,27 @@ class Post
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set isDraft
+     *
+     * @param boolean $isDraft
+     * @return self
+     */
+    public function setIsDraft($isDraft)
+    {
+        $this->isDraft = $isDraft;
+        return $this;
+    }
+
+    /**
+     * Get isDraft
+     *
+     * @return boolean $isDraft
+     */
+    public function getIsDraft()
+    {
+        return $this->isDraft;
     }
 }

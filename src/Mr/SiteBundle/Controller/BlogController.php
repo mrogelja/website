@@ -23,7 +23,7 @@ class BlogController extends Controller
 {
     /**
      * @Route("/", name="blog")
-     * @Template()
+     * @Template("MrSiteBundle:Blog:index.ko.html.twig")
      */
     public function indexAction()
     {
@@ -45,6 +45,7 @@ class BlogController extends Controller
         $post = $this->get('doctrine_mongodb')
             ->getRepository('MrSiteBundle:Post')
             ->find($id);
+
 
         return array(
             "post" => $post
