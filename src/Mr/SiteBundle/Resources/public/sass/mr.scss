@@ -257,3 +257,36 @@ section {
     }
   }
 }
+
+body.blog {
+  .post{
+    margin-bottom: 60px;
+    background: #f7f7f7;
+    padding: 20px;
+
+    header{
+      .date{
+        color: #5a5a5a;
+        .day {
+          font-size: 2.5em;
+          line-height: 1em;
+        }
+
+        .month{
+          font-size: 1.7em;
+        }
+      }
+
+      margin-bottom: 20px;
+    }
+
+    .body{
+      .thumb{
+        img{
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

@@ -9,10 +9,13 @@
 
 namespace Mr\SiteBundle\Controller;
 
+use Mr\SiteBundle\Document\Post;
 use Mr\SiteBundle\MrSiteBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @Route("/blog")
@@ -28,11 +31,16 @@ class BlogController extends Controller
     public function indexAction()
     {
         $posts = $this->get('doctrine_mongodb')
-            ->getRepository('MrSiteBundle:Post')
-            ->findBySection("blog");
+            ->getManager()
+            ->createQueryBuilder('MrSiteBundle:Post')
+            ->field('section')->equals('blog')
+            ->sort('lastModificationAt', 'DESC')
+            ->getQuery()
+            ->execute()
+            ->toArray();
 
         return array(
-            "posts" => $posts
+            "posts" => array_values($posts)
         );
     }
 
@@ -50,5 +58,22 @@ class BlogController extends Controller
         return array(
             "post" => $post
         );
+    }
+
+    /**
+     * @Route("/secure/post/action/new", name="blog_post_new")
+     */
+    public function newPost()
+    {
+        $post = new Post();
+        $post->setSection("blog");
+        $post->setTitle("[Nouvel article]");
+        $post->setSummary("[Vide]");
+
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $dm->persist($post);
+        $dm->flush();
+
+        return new Response($this->get('jms_serializer')->serialize($post, 'json'));
     }
 }

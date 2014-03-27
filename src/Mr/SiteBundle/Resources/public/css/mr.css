@@ -202,3 +202,26 @@ section {
 .hobbies .hobby .icon.icon-savoie {
   font-size: 7rem;
 }
+
+body.blog .post {
+  margin-bottom: 60px;
+  background: #f7f7f7;
+  padding: 20px;
+}
+body.blog .post header {
+  margin-bottom: 20px;
+}
+body.blog .post header .date {
+  color: #5a5a5a;
+}
+body.blog .post header .date .day {
+  font-size: 2.5em;
+  line-height: 1em;
+}
+body.blog .post header .date .month {
+  font-size: 1.7em;
+}
+body.blog .post .body .thumb img {
+  max-width: 100%;
+  height: auto;
+}

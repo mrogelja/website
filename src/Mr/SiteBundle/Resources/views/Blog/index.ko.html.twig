@@ -1,5 +1,7 @@
 {% extends "MrSiteBundle::layout.html.twig" %}
 
+{% set body_class = "blog" %}
+
 {% block sky %}
     <h1>Le blog</h1>
     <h2>
@@ -11,22 +13,27 @@
 
 {% block main %}
     <div id="{{ rand }}" class="row">
+        <button data-bind="click: addPost"><i></i>Nouvel article</button>
         <ul class="no-bullet" data-bind="foreach : { data : posts }">
-            <div class="row">
-                <div class="columns medium-1">
-                    <div class="day" data-bind="text: moment(created_at()).format('D')"></div>
-                    <div class="month" data-bind="text: moment(created_at()).format('MMM')"></div>
+            <article class="post">
+                <header class="row">
+                    <div class="columns medium-2 text-center date">
+                        <div class="day" data-bind="text: moment(created_at()).format('D')"></div>
+                        <div class="month" data-bind="text: moment(created_at()).format('MMM')"></div>
+                    </div>
+                    <div class="columns medium-10">
+                        <a data-bind="attr : { 'href' : '{{ path("blog_post", {"id" : "+id+", "slug" : "+slug+"}) }}'.replace('+id+', id()).replace('+slug+', slug()) }">
+                            <h2 data-bind="text: title"></h2>
+                        </a>
+                    </div>
+                </header>
+                <div class="row body">
+                    <div class="columns medium-2 text-center thumb">
+                        <img data-bind="attr : { 'src' : '{{ path("ressource", { "id" : "+id+" }) }}'.replace('+id+', image.id()) }" >
+                    </div>
+                    <div class="columns medium-10" data-bind="text: summary"></div>
                 </div>
-                <div class="columns medium-11">
-                    <a data-bind="attr : { 'href' : '{{ path("blog_post", {"id" : "+id+", "slug" : "+slug+"}) }}'.replace('+id+', id()).replace('+slug+', slug()) }">
-                        <h2 data-bind="text: title"></h2>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <img data-bind="attr : { 'src' : '{{ path("ressource", { "id" : "+id+" }) }}'.replace('+id+', image.id()) }" >
-                <section data-bind="text: summary"></section>
-            </div>
+            </article>
         </ul>
     </div>
 
@@ -43,6 +50,11 @@
                 var self = this;
                 self.posts = ko.mapping.fromJS({{ posts|serialize('json')|raw }});
 
+                self.addPost = function() {
+                    $.post("{{ path("blog_post_new") }}", [], function(post){
+                       self.posts.unshift(ko.mapping.fromJS(post));
+                    }, 'json');
+                }
             };
 
             ko.applyBindings(new window["{{ rand }}"](), $("{{ rand }}").dom);
