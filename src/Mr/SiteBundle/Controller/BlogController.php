@@ -10,10 +10,12 @@
 namespace Mr\SiteBundle\Controller;
 
 use Mr\SiteBundle\Document\Post;
+use Mr\SiteBundle\Document\Upload;
 use Mr\SiteBundle\MrSiteBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -54,7 +56,6 @@ class BlogController extends Controller
             ->getRepository('MrSiteBundle:Post')
             ->find($id);
 
-
         return array(
             "post" => $post
         );
@@ -65,12 +66,30 @@ class BlogController extends Controller
      */
     public function newPost()
     {
+
+        $dm = $this->get('doctrine_mongodb')->getManager();
+
         $post = new Post();
         $post->setSection("blog");
         $post->setTitle("[Nouvel article]");
         $post->setSummary("[Vide]");
 
-        $dm = $this->get('doctrine_mongodb')->getManager();
+        $thumb = $this->get('doctrine_mongodb')
+            ->getRepository('MrSiteBundle:Upload')
+            ->findOneByFilename("dummyThumb");
+
+        if (!$thumb) {
+            $file  = new File(__DIR__.'/../Resources/public/img/dummy.jpg');
+            $thumb = new Upload();
+            $thumb->setFile($file->getPathname());
+            $thumb->setFilename('dummyThumb');
+            $thumb->setMimeType($file->getMimeType());
+            $dm->persist($thumb);
+            $dm->flush();
+        }
+
+        $post->setImage($thumb);
+
         $dm->persist($post);
         $dm->flush();
 
