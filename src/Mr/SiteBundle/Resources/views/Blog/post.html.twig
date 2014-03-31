@@ -1,4 +1,4 @@
-{% extends "MrSiteBundle::layout.html.twig" %}
+{% extends "MrSiteBundle:Blog:index.html.twig" %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -15,12 +15,23 @@
 
 {% block main %}
     <div class="row">
+        <ul class="button-group right">
+            <li>
+                <button class="small secondary">Publier</button>
+            </li>
+            <li>
+                <button class="small alert">Supprimer</button>
+            </li>
+        </ul>
         {% createphp post as="rdf" noautotag %}
         <div {{ createphp_attributes(rdf) }}>
             <h1 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h1>
             <blockquote {{ createphp_attributes( rdf.summary ) }}>
                 {{ createphp_content( rdf.summary ) }}
             </blockquote>
+            <div>
+                <img src="{{ path("ressource", { "id" : post.image.id }) }}">
+            </div>
             <section {{ createphp_attributes( rdf.content ) }}>{{ createphp_content( rdf.content ) }}</section>
         </div>
         {% endcreatephp %}

@@ -14,7 +14,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Mr\SiteBundle\Document\Post;
 use Mr\SiteBundle\Document\Upload;
 
-class PostsData implements FixtureInterface {
+class PostsData implements FixtureInterface
+{
     /**
      * {@inheritDoc}
      */
@@ -36,11 +37,11 @@ Vivamus et ipsum vitae diam egestas adipiscing. Curabitur auctor turpis ipsum, v
 
 Phasellus consequat enim quis quam varius, id cursus lectus tincidunt. Nunc sem ligula, vulputate id porta eget, convallis quis eros. Maecenas sollicitudin lectus ut sapien tempus, ac iaculis lacus blandit. Nullam diam sapien, auctor in pulvinar vitae, blandit ac magna. Cras fringilla accumsan porttitor. Morbi eu bibendum tellus. Suspendisse potenti. Mauris vel porttitor neque. Nunc eu elit a massa eleifend hendrerit et semper nibh. Proin cursus laoreet aliquet. Proin nulla felis, porta eu velit vel, accumsan pellentesque urna. Nulla posuere orci vel interdum ultrices.
 TXT
-);
+        );
 
         $image = new Upload();
-        $image->setFile("/home/hypermedia/Bureau/LOGO_CGT-Ina_A4.gif");
-        $image->setFilename("LOGO_CGT-Ina_A4.gif");
+        $image->setFile(__DIR__ . "\\..\\..\\Resources\\public\\img\\dummy.jpg");
+        $image->setFilename("dummyThumb");
         $image->setMimeType("image/gif");
 
         $manager->persist($image);

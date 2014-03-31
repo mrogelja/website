@@ -73,6 +73,7 @@ class BlogController extends Controller
         $post->setSection("blog");
         $post->setTitle("[Nouvel article]");
         $post->setSummary("[Vide]");
+        $post->isDraft(true);
 
         $thumb = $this->get('doctrine_mongodb')
             ->getRepository('MrSiteBundle:Upload')
