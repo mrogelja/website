@@ -25,8 +25,7 @@
                     <div class="columns medium-2 text-center thumb">
                         <img data-bind="attr : { 'src' : '{{ path("ressource", { "id" : "+id+" }) }}'.replace('+id+', image.id()) }" >
                     </div>
-                    <div class="columns medium-10" data-bind="inlineCkeditor: summary, ckUpdate: $parent.updateContent"
-                         contenteditable="true"></div>
+                    <div class="columns medium-10" data-bind="inlineCkeditor: summary, ckUpdate: $parent.updateContent" contenteditable="true"></div>
                 </div>
             </article>
         </ul>
@@ -36,42 +35,17 @@
 {% endblock %}
 
 {% block scripts %}
+    <script>window.CKEDITOR_BASEPATH = '/bundles/mrsite/js/ckeditor/';</script>
+
     {% javascripts output="/js/ckeditor.js"
-    '@CmfCreateBundle/Resources/public/vendor/ckeditor/ckeditor.js' %}
+    '@MrSiteBundle/Resources/public/js/ckeditor/ckeditor.js'
+    %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
-    <script>
-        CKEDITOR.editorConfig = function (config) {
-            config.language = 'fr'; // Lanque défaut
-            config.uiColor = '#eee';// Couleur de l'éditeur
-            config.width = 600;     / Largeur
-            de
-            l
-            'éditeur
 
-            config.toolbar = 'MyToolbar_defaut';
-            config.toolbar_MyToolbar_defaut =
-                    [
-                        ['Bold', 'Italic', 'Underline', 'Strike', '-'],
-                        config.toolbar = 'MyToolbar_user';
-
-            ]
-            ;
-            config.toolbar_MyToolbar_user =
-                    [
-                        ['Bold', 'Italic', 'Underline', 'Strike', '-'],
-                        ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
-                        ['JustifyLeft', 'JustifyCenter'],
-                    ];
-
-        };
-    </script>
     <script src="{{ asset('bundles/mrsite/js/knockoutjs/knockout.js') }}"></script>
     <script src="{{ asset('bundles/mrsite/js/knockoutjs/knockout.ckeditor.js') }}"></script>
     <script src="{{ asset('bundles/mrsite/js/knockoutjs/knockout.mapping.js') }}"></script>
-
-
-
 
     <script>
         (function(){
@@ -86,7 +60,7 @@
                 }
 
                 self.updateContent = function () {
-
+                   console.log('save');
                 }
             };
 
